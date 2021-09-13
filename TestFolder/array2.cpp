@@ -5,14 +5,15 @@ using std::endl;
 
 int main()
 {
-	int num[10]{ 5, 7, 2, 4, 6, 7, 10, 1, 3, 9 };
-	int bk_num[10];
+	const int n =10;
+	int num[n]{ 5, 7, 2, 4, 6, 7, 10, 1, 3, 9 };
+	int bk_num[n];
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < n; i++)
 	{
-		bk_num[i] = num[10-i-1];
+		bk_num[i] = num[n-i-1];
 	 }
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < n; i++)
 	{
 		cout << bk_num[i] << endl;
 
