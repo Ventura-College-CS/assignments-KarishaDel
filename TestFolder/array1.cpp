@@ -12,7 +12,7 @@ int main()
 	int temp_min = 0;
 	//int skip = 0;
 
-	for (int i = 1; i < 10; i++)
+	for (int i = 1; i < 9; i++) //by changing i < 10 to i < 9 we can avoid the chance of a runtime error
 	{
 		//for (int j = i + 1; j < 10; j++)
 		//{
