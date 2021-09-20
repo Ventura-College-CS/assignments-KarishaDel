@@ -1,41 +1,37 @@
-#include <iostream>
+#include<iostream>
 #include <cstring>
 using namespace std;
 
-int main()
+int main() 
 {
+    // string mainstr = "Chocolate";
+    // string substr = "col";
 
-	// string mainstr="chocolate";
-	// string substr= "col";
+    // int spot;
 
-	char mainstr[10]="chocolate";
-	char substr[10]="col";
-	int pos, i, j;
-	int flag=0;
+    // spot = mainstr.find(substr);
 
-	// pos = mainstr.find(substr) ; 
-	cout << sizeof(mainstr) << endl; 
-	cout << sizeof(substr) << endl;
+    // cout << "Found in spot: " << spot << endl;
 
-	cout << strlen(substr) << endl;
-	cout << strlen(mainstr) << endl; 
+    char mainstr [10] = "chocolate";
+    char substr[10] = "lat";
+    int i, j;
 
-	// cout << " found at position " << pos << endl;
+    // cout << strlen(substr) << endl;
+    // cout << strlen(mainstr) << endl;
 
-	for(  i =0; i < strlen(mainstr) - strlen(substr) + 1 ; i++)
-	{
-		for (  j=0; j < strlen(substr); j++)
-		{
-			if ( substr[j] != mainstr[i+j])
-				break;
-		}
-		// if ( full iteration of inside for loop)
-		if ( j == strlen(substr)){
-			flag = 1;
-			cout << " matched at the position " << i << endl;
-		}
-	
-	}
-    if(!flag)
-    cout << "We did not find a match." << endl;
-}    
+    for(i = 0; i < strlen(mainstr) - strlen(substr) + 1; i++)
+    {
+        for(j = 0; j < strlen(substr); j++)
+        {
+            if(substr[j] != mainstr[i+j])
+            break;
+        }
+         if (j == strlen(substr))
+         {
+             cout << "matched" << i << endl;
+         }
+
+    }
+
+}
