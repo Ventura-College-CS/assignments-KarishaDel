@@ -27,3 +27,13 @@ int	main()
 	
 	cout << "Student Info S2\n" << s2. id << "\t" << s2.name << "\t" << s2.address << endl;
 }
+
+void stu_find()
+{
+	int input;
+	cout << "Enter the student ID:";
+	cin >> input;
+	if (input )
+	
+
+}
