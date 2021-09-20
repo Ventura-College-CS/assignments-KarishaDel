@@ -1,39 +1,35 @@
-#include	<iostream>
+#include <iostream>
 #include <fstream>
 
-using namespace	std;
+using namespace std;
 
-void stu_find();
-
-struct student
-{
-	int	id;
-	string	name;
-	string	address;
+struct Student {
+  int id;
+  char sname[20];
+  double score[2];
+  double sum;
+  double avg;
 };
 
-
-int	main()
+int main()
 {
-	student	s1;
-	student 	s2 = {10001, "Mary", "Lafayette"};
-	ifstream rdfile;
+    ifstream ifs;
+    ofstream ofs;
+	Student s;
 
-	rdfile.open("students.txt");
+    ifs.open("students.txt");
+    ofs.open("student.bin");
 
-	cout << "Enter the student's information (id, name, address)\n";
-	cin >> s1.id >> s1.name >> s1.address ;
-	cout << "Student Info S1\n" << s1. id << "\t" << s1.name << "\t" << s1.address << endl;
-	
-	cout << "Student Info S2\n" << s2. id << "\t" << s2.name << "\t" << s2.address << endl;
-}
-
-void stu_find()
-{
-	int input;
-	cout << "Enter the student ID:";
-	cin >> input;
-	if (input )
-	
-
-}
+	ifs >> s.id;
+	ifs >> s.sname;
+	ifs >> s.score[0];
+	ifs >> s.score[1];
+	s.sum = s.score[0] + s.score[1];
+	s.avg= s.sum / 2.0;
+	cout << "ID: " <<s.id <<endl;
+	cout << "Nmae: " << s.sname;
+	cout << "Score 1: " << s.score[0] << endl;
+	cout << "score 2: " <<s.score[1] << endl;
+	cout << " Sum  : " << s.sum << endl;
+	cout << " Avg  : " << s.avg << endl;
+s.sname, s.score[0], s.score[1]
