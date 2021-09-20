@@ -5,6 +5,8 @@
 using namespace std;
 
 void printVec(vector<int>);
+void insertVec(vector<int>, int);
+void delVec(vector<int>, int);
 
 int main()
 {
@@ -13,9 +15,31 @@ int main()
     printVec(number);
     sort(number.begin(), number.end());
     int new_num, bad_num;
-
+    
     cout << "Enter the new number: ";
     cin >> new_num;
+    insertVec(number, new_num);
+   
+
+    cout << "Enter a number to erase: ";
+    cin >> bad_num;
+    delVec(number, bad_num);
+}
+
+void printVec(vector<int> vec)
+{
+    vector<int>::iterator it;
+        for (it = vec.begin(); it < vec.end(); it++)
+    {
+        cout << *it << "\t"; // * is a pointer
+    }
+    cout << endl;
+
+}
+
+void insertVec(vector<int> number, int new_num)
+{
+    vector<int>::iterator it;
 
     for( it=number.begin(); it< number.end(); it++)
     {
@@ -24,9 +48,12 @@ int main()
     }
     number.insert(it ,new_num);
     printVec(number);
+}
 
-    cout << "Enter a number to erase: ";
-    cin >> bad_num;
+void delVec(vector<int> number, int bad_num)
+{
+    vector<int>::iterator it;
+
     for( it=number.begin(); it< number.end(); it++)
     {
         if(*it == bad_num)
@@ -41,15 +68,4 @@ int main()
         number.erase(it);
     }
     printVec(number);
-}
-
-void printVec(vector<int> vec)
-{
-    vector<int>::iterator it;
-        for (it = vec.begin(); it < vec.end(); it++)
-    {
-        cout << *it << "\t"; // * is a pointer
-    }
-    cout << endl;
-
 }
