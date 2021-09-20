@@ -12,7 +12,7 @@ int main()
     vector<int> number = {12,15,19,21,25, 27,29,33,37,43};
     printVec(number);
     sort(number.begin(), number.end());
-    int new_num;
+    int new_num, bad_num;
 
     cout << "Enter the new number: ";
     cin >> new_num;
@@ -22,8 +22,24 @@ int main()
         if(*it > new_num)
         break;
     }
-
     number.insert(it ,new_num);
+    printVec(number);
+
+    cout << "Enter a number to erase: ";
+    cin >> bad_num;
+    for( it=number.begin(); it< number.end(); it++)
+    {
+        if(*it == bad_num)
+        break;
+    }
+    if (it == number.end())
+    {
+        cout << "Number not available" <<endl;
+    }
+    else
+    {
+        number.erase(it);
+    }
     printVec(number);
 }
 
