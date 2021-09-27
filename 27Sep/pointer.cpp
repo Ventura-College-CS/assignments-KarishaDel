@@ -20,4 +20,7 @@ int main()
     prt1 = &num2;
     cout << prt1 << endl; //print the mem address 
     cout << *prt1 << endl; //print the VALUE 200
+
+    int *ptr2;
+    ptr2 = prt1; //assing direct value(address) of prt1. ptr2= address of num2
 }
