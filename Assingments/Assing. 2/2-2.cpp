@@ -20,7 +20,6 @@ void printArray(double * const  n, int N)
 {
     double *ptr;
     	ptr = n; 
-    cout <<  &ptr << endl; //address of first element
     
     for(int i=0; i < N; i++)
     {
