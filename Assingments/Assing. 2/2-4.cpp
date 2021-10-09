@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 
 const int 	MAX_LEN = 20;
@@ -63,10 +64,12 @@ void printStudents(Students *ptr, int N)
 
 void sortStudents(Students *ptr, int N)
 {
-    double sum = 0;
+    double sum1= 0;
+    int k, flag;
 
     for(int i = 0; i < N; i++)
     {
+        sum1 += (ptr+i)->scores[0] + (ptr+i)->scores[1] + (ptr+i)->scores[2];
 	    // Need one more for loop to comapre all adjacent students pairs.
 	    // for ( int j=0; j<N-1; j++)
 	    
@@ -77,18 +80,21 @@ void sortStudents(Students *ptr, int N)
 	    	// Next, compare the sum1 and sum2
 	    	// if sum1 > sum2, swap the struct Student at once.
 	    	// swap( the left student pointer, the right student pointer);
-	    
-        sum+ *ptr.scores[i];
     }
 
-//         int i;
-//      if(flag == 0)
-//     {
-//         sort(ptr, ptr + N); //sort does acending be default so no change is needed
-//     }
+    
+     if(flag == 0)
+    {
+        sort(sum1, sum1 + N); //sort does acending be default so no change is needed
+    }
 
-//     if(flag == 1)
-//     {
-//         sort(ptr, ptr + N, greater<double>()); //puts the larger element before
-//     }  
-// }		
+    if(flag == 1)
+    {
+        sort(sum1, sum1 + N, greater<double>()); //puts the larger element before
+    }  
+  	
+    for(int i=0; i<N;i++)
+	cout << (ptr+i) << "\t";
+	cout << endl;
+
+}		
