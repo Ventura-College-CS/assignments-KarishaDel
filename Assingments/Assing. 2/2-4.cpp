@@ -11,7 +11,7 @@ struct Students
 	double 	scores[NUM_SCORES];
 };
 
-Students *makeStudents(int );
+Students *makeStudents(int N);
 void printStudents(Students * const, int);
 void sortStudents(Students * const, int);
 
@@ -31,7 +31,7 @@ Students *makeStudents(int N)
     ifstream ifs;
     Students    *ptr= new Students [N];
 
-        ifs.open("students2-4.txt");
+    ifs.open("students2-4.txt");
     if ( ifs.fail())
     {
         cerr << "File open error\n";
@@ -41,13 +41,43 @@ Students *makeStudents(int N)
 	for(int i=0;i<N; i++)
     {
         ifs >> (ptr+i)->sid >> (ptr+i)->sname; //GOTTA CHANGE THE ptr to dynamic
+        
         for(int j=0; j<NUM_SCORES; j++)
-			ifs >> (ptr+i)->scores[j] ;
-		if ( ifs.fail() )
+			ifs >> *(ptr+i)->scores[j] ;
+		
+        if ( ifs.fail() )
 		{
 			cerr << "File Read Error\n";
 			exit(0);
 		}
     }
-		
+    return ptr;
 }
+
+void printStudents(Students *ptr, int N)
+{
+	for(int i=0; i<N;i++)
+		cout << (ptr+i) << "\t";
+	cout << endl;
+}
+
+void sortStudents(Students *ptr, int N)
+{
+    double sum = 0;
+
+    for(int i = 0; i < N; i++)
+    {
+        sum+ *ptr.scores[i];
+    }
+
+        int i;
+     if(flag == 0)
+    {
+        sort(ptr, ptr + N); //sort does acending be default so no change is needed
+    }
+
+    if(flag == 1)
+    {
+        sort(ptr, ptr + N, greater<double>()); //puts the larger element before
+    }  
+}		
