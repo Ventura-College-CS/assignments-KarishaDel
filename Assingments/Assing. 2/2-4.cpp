@@ -70,14 +70,14 @@ void sortStudents(Students *ptr, int N)
         sum+ *ptr.scores[i];
     }
 
-        int i;
-     if(flag == 0)
-    {
-        sort(ptr, ptr + N); //sort does acending be default so no change is needed
-    }
+//         int i;
+//      if(flag == 0)
+//     {
+//         sort(ptr, ptr + N); //sort does acending be default so no change is needed
+//     }
 
-    if(flag == 1)
-    {
-        sort(ptr, ptr + N, greater<double>()); //puts the larger element before
-    }  
-}		
+//     if(flag == 1)
+//     {
+//         sort(ptr, ptr + N, greater<double>()); //puts the larger element before
+//     }  
+// }		
