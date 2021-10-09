@@ -24,13 +24,15 @@ int main()
     ptr = makeStudents(N); //gotta make it loop
 	printStudents(ptr, N);
     sortStudents(ptr, N);
+	cout << "After sorting\n";
+	printStudents(ptr, N);
 
 }
 
 Students *makeStudents(int N)
 {
     ifstream ifs;
-    Students    *ptr= new Students [N];
+    Students    *ptr= new Students [N]; //THIS IS DYNAMIC MEMORY
 
     ifs.open("students2-4.txt");
     if ( ifs.fail())
@@ -44,7 +46,7 @@ Students *makeStudents(int N)
         ifs >> (ptr+i)->sid >> (ptr+i)->sname; //GOTTA CHANGE THE ptr to dynamic
         
         for(int j=0; j<NUM_SCORES; j++)
-			ifs >> *(ptr+i)->scores[j] ;
+			ifs >> (ptr+i)->scores[j] ;
 		
         if ( ifs.fail() )
 		{
@@ -58,20 +60,39 @@ Students *makeStudents(int N)
 void printStudents(Students *ptr, int N)
 {
 	for(int i=0; i<N;i++)
-		cout << (ptr+i) << "\t";
+	{
+		cout << (ptr+i)->sid << "\t";
+		cout << (ptr+i)->sname << "\t";
+		for(int j=0;j<3; j++)
+			cout << (ptr+i)->scores[j] << "\t";
 	cout << endl;
+	}
 }
 
 void sortStudents(Students *ptr, int N)
 {
-    double sum1= 0;
-    int k, flag;
+    double sum1 = 0, sum2 = 0;
+    
 
     for(int i = 0; i < N; i++)
     {
-        sum1 += (ptr+i)->scores[0] + (ptr+i)->scores[1] + (ptr+i)->scores[2];
-	    // Need one more for loop to comapre all adjacent students pairs.
-	    // for ( int j=0; j<N-1; j++)
+        sum1 = 0, sum2 = 0;
+        for(int j=0; j < N-1; j++)
+        {
+            for(int k=0; k < 3; k++)
+          {  
+            sum1 += (ptr+j)->scores[k];
+            sum2 += (ptr+j+1)->scores[k];
+          }    
+            if( sum1 > sum2)
+            {
+                swap ( *(ptr+j), *(ptr+j+1));
+            }
+        }
+ 
+	    
+        // Need one more for loop to comapre all adjacent students pairs.
+	    // 
 	    
 	    	// Need one more for loop or statement to get sum of each student
 	    	//  sum1 += (ptr+i)->scores[0] + (ptr+i)->scores[1] + (ptr+i)->scores[2] ;
@@ -81,20 +102,5 @@ void sortStudents(Students *ptr, int N)
 	    	// if sum1 > sum2, swap the struct Student at once.
 	    	// swap( the left student pointer, the right student pointer);
     }
-
-    
-     if(flag == 0)
-    {
-        sort(sum1, sum1 + N); //sort does acending be default so no change is needed
-    }
-
-    if(flag == 1)
-    {
-        sort(sum1, sum1 + N, greater<double>()); //puts the larger element before
-    }  
-  	
-    for(int i=0; i<N;i++)
-	cout << (ptr+i) << "\t";
-	cout << endl;
 
 }		
