@@ -8,32 +8,61 @@ const int 	NUM_SCORES = 3;
 struct Students 
 {
 	int 	sid;
-	char 	sname[20];
-	double 	scores[3];
+	char 	sname[MAX_LEN];
+	double 	scores[NUM_SCORES];
 };
+
+Students *makeStudents(int N);
 
 int main()
 {
     const int N = 10;
-    Students    *ptr= new Students [N];
+    Students    *ptr;
 
+    ptr = makeStudents(N);
+
+}
+
+Students *makeStudents(int N)
+{
     ifstream ifs;
     ofstream ofs;
+    Students    *ptr= new Students [N]; //THIS IS DYNAMIC MEMORY
 
     ifs.open("students.txt");
     ofs.open("student.bin");
 
-for (int i=0; i<=9; i++)
-{
-	ifs >> (ptr+i)->sid;
-	ifs >> (ptr+i)->sname;
-    ifs >> (ptr+i)->scores[1];
-	ifs >> (ptr+i)->scores[2];
-    ifs >> (ptr+i)->scores[3];
+    if ( ifs.fail())
+    {
+        cerr << "File open error\n";
+        exit(0);
+    }
 
-    ofs.write( (char *)&ptr, sizeof(ptr) );
-	
-}
-	ifs.close();
+	for(int i=0;i<N; i++)
+    {
+        ifs >> (ptr+i)->sid >> (ptr+i)->sname;
+        
+        for(int j=0; j<NUM_SCORES; j++)
+			ifs >> (ptr+i)->scores[j] ;
+		
+        if ( ifs.fail() )
+		{
+			cerr << "File Read Error\n";
+			exit(0);
+		}
+        
+        ofs.write( (char *)&ptr, sizeof(ptr) );
+
+        cout << " ID from Bin: " << (ptr+i)->sid << endl;
+	    cout << " Name from Bin: " << (ptr+i)->sname << endl;
+
+        cout << endl;
+    }
+    
+    ifs.close();
 	ofs.close();
+    return ptr;
+
 }
+
+	
