@@ -67,6 +67,17 @@ void sortStudents(Students *ptr, int N)
 
     for(int i = 0; i < N; i++)
     {
+	    // Need one more for loop to comapre all adjacent students pairs.
+	    // for ( int j=0; j<N-1; j++)
+	    
+	    	// Need one more for loop or statement to get sum of each student
+	    	//  sum1 += (ptr+i)->scores[0] + (ptr+i)->scores[1] + (ptr+i)->scores[2] ;
+	    	// and also sum2 += ...
+	    
+	    	// Next, compare the sum1 and sum2
+	    	// if sum1 > sum2, swap the struct Student at once.
+	    	// swap( the left student pointer, the right student pointer);
+	    
         sum+ *ptr.scores[i];
     }
 
