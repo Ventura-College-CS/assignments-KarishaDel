@@ -43,7 +43,7 @@ void compare85(Students *ptr, int N)
 
     for(int i = 0; i < N; i++)
     {
-        sum += (ptr+i)->scores[0] + (ptr+i)->scores[1] + (ptr+i)->scores[2];
+        sum += (ptr+i)->scores[1] + (ptr+i)->scores[1] + (ptr+i)->scores[3];
         avg = sum / 3;    
         
         if( avg > 85)
