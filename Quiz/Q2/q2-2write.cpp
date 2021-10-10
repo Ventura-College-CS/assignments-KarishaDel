@@ -10,6 +10,8 @@ struct Students
 	int 	sid;
 	char 	sname[MAX_LEN];
 	double 	scores[NUM_SCORES];
+    // double sum;
+    // double avg;
 };
 
 Students *makeStudents(int N);
@@ -37,15 +39,18 @@ Students *makeStudents(int N)
         cerr << "File open error\n";
         exit(0);
     }
-
+    
 	for(int i=0;i<N; i++)
     {
-        ifs >> (ptr+i)->sid >> (ptr+i)->sname;
-        
-        for(int j=0; j<NUM_SCORES; j++)
-			ifs >> (ptr+i)->scores[j] ;
-		
-        if ( ifs.fail() )
+	    ifs >> (ptr+i)->sid;
+	    ifs >> (ptr+i)->sname;
+        ifs >> (ptr+i)->scores[0];
+	    ifs >>(ptr+i)->scores[1];
+        ifs >>(ptr+i)->scores[2];
+        // (ptr+i)->sum = (ptr+i)->scores[0] + (ptr+i)->scores[1]+ (ptr+i)->scores[2];
+	    // (ptr+i)->sum / 3.0;
+
+        if ( ofs.fail() )
 		{
 			cerr << "File Read Error\n";
 			exit(0);
@@ -55,6 +60,8 @@ Students *makeStudents(int N)
 
         cout << " ID from Bin: " << (ptr+i)->sid << endl;
 	    cout << " Name from Bin: " << (ptr+i)->sname << endl;
+        cout << " Scores from Bin: " << (ptr+i)->scores[0] << ", " << (ptr+i)->scores[1] << ", " << (ptr+i)->scores[2] << endl;
+        
 
         cout << endl;
     }
