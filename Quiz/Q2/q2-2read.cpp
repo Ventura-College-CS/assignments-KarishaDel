@@ -27,7 +27,7 @@ int main()
  
     ifs.open("student.bin");
 
-	ifs.read( (char *)ptr, sizeof(ptr) );
+	ifs.read( (char *)ptr, sizeof(Students) );
     cout << sizeof(Students) << endl;
 
     compare85(ptr,N);

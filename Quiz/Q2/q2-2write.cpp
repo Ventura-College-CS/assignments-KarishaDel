@@ -56,14 +56,12 @@ Students *makeStudents(int N)
 			exit(0);
 		}
         
-        ofs.write( (char *)ptr, sizeof(ptr) );
+        ofs.write( (char *)(ptr+i), sizeof(Students) );
 
-        cout << " ID from Bin: " << (ptr+i)->sid << endl;
-	    cout << " Name from Bin: " << (ptr+i)->sname << endl;
-        cout << " Scores from Bin: " << (ptr+i)->scores[0] << ", " << (ptr+i)->scores[1] << ", " << (ptr+i)->scores[2] << endl;
-        
-
-        cout << endl;
+            char *ptr;
+            char c='a';
+            ptr=&c;
+            cout << sizeof(ptr) << endl;
     }
     
     ifs.close();
