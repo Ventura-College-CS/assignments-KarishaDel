@@ -51,7 +51,7 @@ Students *makeStudents(int N)
 			exit(0);
 		}
         
-        ofs.write( (char *)&ptr, sizeof(ptr) );
+        ofs.write( (char *)ptr, sizeof(ptr) );
 
         cout << " ID from Bin: " << (ptr+i)->sid << endl;
 	    cout << " Name from Bin: " << (ptr+i)->sname << endl;
