@@ -36,3 +36,7 @@ void printArray(double *ptr, int N)
 		cout << *(ptr+i) << "\t";
 	cout << endl;
 }
+
+//The first thing I did was create the functions, one to fill up the array and one to print. The next part 
+//was the int(main) in which I assigned the new to double *ptr to create the dynamic memory. 
+//Everything else was using the rand to fill up the array then a forloop to print it. 

@@ -10,22 +10,20 @@ struct Students
 	int 	sid;
 	char 	sname[MAX_LEN];
 	double 	scores[NUM_SCORES];
-    // double sum;
-    // double avg;
 };
 
-Students *makeStudents(int N);
+Students *makeStudentsBin(int N);
 
 int main()
 {
     const int N = 10;
     Students    *ptr;
 
-    ptr = makeStudents(N);
+    ptr = makeStudentsBin(N);
 
 }
 
-Students *makeStudents(int N)
+Students *makeStudentsBin(int N)
 {
     ifstream ifs;
     ofstream ofs;
@@ -71,3 +69,9 @@ Students *makeStudents(int N)
 }
 
 	
+/*WRITE.CPP: The first mistake I made was that I had put the struct under the StudentsBin function. 
+Once I fixed that I took similar steps as assignments 1 and 2-4. Since I was using the ptr pointer 
+I had to change all of s. to ptr and since it was a dynamic memory I had to use the +i so it would 
+run thru the entire text file. The next part stumped me on how to get the information to be copied into the bin file. 
+I was not allocating enough memory but I was able to fix that on line 57 
+by using the sizeof(Students) which is the struct. */
