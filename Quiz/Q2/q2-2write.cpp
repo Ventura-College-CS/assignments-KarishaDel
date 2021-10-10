@@ -56,10 +56,10 @@ Students *makeStudentsBin(int N)
         
         ofs.write( (char *)(ptr+i), sizeof(Students) );
 
-            char *ptr;
-            char c='a';
-            ptr=&c;
-            cout << sizeof(ptr) << endl;
+            // char *ptr;
+            // char c='a';
+            // ptr=&c;
+            // cout << sizeof(ptr) << endl;
     }
     
     ifs.close();
