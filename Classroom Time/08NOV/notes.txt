@@ -1,0 +1,7 @@
+infix is a + b. the operator is betwen operands
+postfix ab+ the operator is after the operands
+infix to postfix ex:
+a bc* + d + : so in order of operation we multiply bc then add a to bc* then add d
+a * b + c * d / e >>> ab* cd* e/ +
+
+a+b*c+d >>>> abc*+d+
