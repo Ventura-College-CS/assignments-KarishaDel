@@ -57,7 +57,7 @@ class StudentCompare //change the order for the quiz 2
 			score = rhs.getScore();
 			for(int i=0; i<score.size(); i++)
 				rhssum += score[i];
-			return lhssum < rhssum ;
+			return lhssum > rhssum ;
 		}
 	
 };
@@ -97,3 +97,5 @@ int main()
 	}
 
 }
+
+//
