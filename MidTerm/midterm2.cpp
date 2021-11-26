@@ -44,10 +44,10 @@ public:
 	}
 };
 
-class StudentCompare //change the order for the quiz 2
+class StudentCompare 
 {
 	public:
-		int operator()(const Students &lhs, const Students &rhs)  		// Operator Overloading 
+		int operator()(const Students &lhs, const Students &rhs)  
 		{
 			double 	lhssum = 0.0, rhssum = 0.0;
 			vector<double> score;
@@ -59,7 +59,9 @@ class StudentCompare //change the order for the quiz 2
 				rhssum += score[i];
 			return lhssum > rhssum ;
 		}
-	
+	/*In this we comapred the lhs and the rhs and organized it by comapring them to eachother.
+    So if the lhssum is less than the rhsum it will print the smallest one out first. The quickest change was to swap the < to the > sign in line 60.
+    This flepped the 2nd part of the print out. */
 };
 
 
@@ -82,8 +84,12 @@ int main()
 	s3.setSname("Greg");
 	s3.setScore(100, 90, 50);
 	s3.printStudent();
+//Creating the student objects.
 
 	priority_queue<Students, vector<Students>, StudentCompare> pq;
+/*Firsat we type in the object, then the data type and then the StudentComapre class. This will dictate the order of the print out.
+By typing it in line 88  
+*/
 
 	pq.push(s1);
 	pq.push(s2);
@@ -98,4 +104,4 @@ int main()
 
 }
 
-//
+
