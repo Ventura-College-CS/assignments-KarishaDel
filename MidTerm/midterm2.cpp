@@ -61,7 +61,7 @@ class StudentCompare
 		}
 	/*In this we comapred the lhs and the rhs and organized it by comapring them to eachother.
     So if the lhssum is less than the rhsum it will print the smallest one out first. The quickest change was to swap the < to the > sign in line 60.
-    This flepped the 2nd part of the print out. */
+    This flipped the 2nd part of the print out. */
 };
 
 
@@ -87,13 +87,13 @@ int main()
 //Creating the student objects.
 
 	priority_queue<Students, vector<Students>, StudentCompare> pq;
-/*Firsat we type in the object, then the data type and then the StudentComapre class. This will dictate the order of the print out.
-By typing it in line 88  
+/*First we type in the object, then the data type and then the StudentComapre class. This will dictate the order of the print out. 
 */
 
 	pq.push(s1);
 	pq.push(s2);
 	pq.push(s3);
+/*Now we added each emenets for the students */
 
 	while (!pq.empty())
 	{
