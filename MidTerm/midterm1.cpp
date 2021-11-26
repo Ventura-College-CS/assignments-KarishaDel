@@ -1,7 +1,10 @@
 #include <iostream>
+#include "stack.hpp"
 
 using namespace std;
 
+const int NUM_STUDENTS = 10;
+const int NUM_SCORES = 3;
 class Students
 {
 private:
