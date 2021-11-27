@@ -18,10 +18,11 @@ public:
 	{
 		sid = id;
 		sname = name;
-		score.push_back(s0);
 		score.push_back(s1);
 		score.push_back(s2);
+		score.push_back(s3);
 	}
+
 	int getSid() const { return sid; }
 	string getSname() const { return sname; }
 	vector<double> const &getScore() const { return score; }
@@ -30,9 +31,9 @@ public:
 	void setScore(double s0, double s1, double s2)
 	{
 		score.clear();
-		score.push_back(s0);
 		score.push_back(s1);
 		score.push_back(s2);
+		score.push_back(s3);
 	}
     
 	void printStudent() const
@@ -44,3 +45,31 @@ public:
 		cout << endl;
 	}
 };
+
+int main() 
+{
+	s1.setSid(10000001);
+	s1.setSname("Bill");
+	s1.setScore(100, 100, 100);
+	s1.printStudent();
+
+	s2.setSid(10000002);
+	s2.setSname("Kurt");
+	s2.setScore(100, 90, 100);
+	s2.printStudent();
+
+	s3.setSid(10000003);
+	s3.setSname("Greg");
+	s3.setScore(100, 90, 50);
+	s3.printStudent();
+
+	Stack<Students, 10> s1;
+
+		score.push_back(s1);
+		score.push_back(s2);
+		score.push_back(s3);
+
+	cout << s1.pop() << endl; 
+	cout << s1.pop() << endl; 
+	cout << s1.pop() << endl;
+}
