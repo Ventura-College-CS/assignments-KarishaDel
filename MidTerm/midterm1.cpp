@@ -18,9 +18,9 @@ public:
 	{
 		sid = id;
 		sname = name;
+		score.push_back(s0);
 		score.push_back(s1);
 		score.push_back(s2);
-		score.push_back(s3);
 	}
 
 	int getSid() const { return sid; }
@@ -31,9 +31,9 @@ public:
 	void setScore(double s0, double s1, double s2)
 	{
 		score.clear();
+		score.push_back(s0);
 		score.push_back(s1);
 		score.push_back(s2);
-		score.push_back(s3);
 	}
     
 	void printStudent() const
