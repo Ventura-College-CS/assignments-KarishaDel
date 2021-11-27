@@ -48,8 +48,9 @@ public:
 
 int main() 
 {
-	Students s1,s2,s3;
-	
+	Students s1,s2,s3,tmp;
+	vector<double> cs;
+	int i;
 
 	s1.setSid(10000001);
 	s1.setSname("Bill");
@@ -66,21 +67,36 @@ int main()
 	s3.setScore(100, 90, 50);
 	s3.printStudent();
 
-	Stack<Students, 10> st.push(s1);
+	Stack<Students, 10> st; 
+	st.push(s1);
+	st.push(s2);
+	st.push(s3);
 
-	cout << st.pop() << endl; //s3
+	//cout << st.pop() << endl; //s3
 	
-	student = st.pop();
-	cs = Students.getScore();
-	cout << Students.getSid() << Students.getSname();
+	tmp = st.pop();
+	cs = tmp.getScore();
+	cout << tmp.getSid() << " " << tmp.getSname()<< endl;
+	for(i=0;i<cs.size();i++)
+	{
+		cout << cs[i] <<endl;
+	}
 	
-	cout << st.pop() << endl; 
-	student = st.pop();
-	cs = Students.getScore();
-	cout << Students.getSid() << Students.getSname();
+	//cout << st.pop() << endl; 
+	tmp = st.pop();
+	cs = tmp.getScore();
+	cout << tmp.getSid() << " "<< tmp.getSname()<< endl;
+	for(i=0;i<cs.size();i++)
+	{
+		cout << cs[i] <<endl;
+	}
 	
-	cout << st.pop() << endl; //s1
-	student = st.pop();
-	cs = Students.getScore();
-	cout << Students.getSid() << Students.getSname();
+	//cout << st.pop() << endl; //s1
+	tmp = st.pop();
+	cs = tmp.getScore();
+	cout << tmp.getSid() << " "<< tmp.getSname()<< endl;
+	for(i=0;i<cs.size();i++)
+	{
+		cout << cs[i] <<endl;
+	}
 }
