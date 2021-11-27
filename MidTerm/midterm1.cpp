@@ -48,6 +48,8 @@ public:
 
 int main() 
 {
+	Students s1,s2,s3;
+
 	s1.setSid(10000001);
 	s1.setSname("Bill");
 	s1.setScore(100, 100, 100);
@@ -63,13 +65,9 @@ int main()
 	s3.setScore(100, 90, 50);
 	s3.printStudent();
 
-	Stack<Students, 10> s1;
+	Stack<Students, 10> st1.push(s1);
 
-		score.push_back(s1);
-		score.push_back(s2);
-		score.push_back(s3);
-
-	cout << s1.pop() << endl; 
-	cout << s1.pop() << endl; 
-	cout << s1.pop() << endl;
+	cout << st.pop() << endl; 
+	cout << st.pop() << endl; 
+	cout << st.pop() << endl;
 }
