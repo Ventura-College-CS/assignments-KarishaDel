@@ -44,7 +44,24 @@ public:
 			cout << score[i] << "\t";
 		cout << endl;
 	}
+
+	void Print()
+	{
+		Students tmp;
+		vector<double> cs;
+		int i;
+		Stack<Students, 10> st;
+		
+		tmp = st.pop();
+		cs = tmp.getScore();
+		cout << tmp.getSid() << " " << tmp.getSname()<< endl;
+		for(i=0;i<cs.size();i++)
+			{
+				cout << cs[i] <<endl;
+			}
+	}
 };
+
 
 int main() 
 {
@@ -72,31 +89,28 @@ int main()
 	st.push(s2);
 	st.push(s3);
 
-	//cout << st.pop() << endl; //s3
 	
-	tmp = st.pop();
-	cs = tmp.getScore();
-	cout << tmp.getSid() << " " << tmp.getSname()<< endl;
-	for(i=0;i<cs.size();i++)
-	{
-		cout << cs[i] <<endl;
-	}
+	// tmp = st.pop();
+	// cs = tmp.getScore();
+	// cout << tmp.getSid() << " " << tmp.getSname()<< endl;
+	// for(i=0;i<cs.size();i++)
+	// {
+	// 	cout << cs[i] <<endl;
+	// }
+	 
+	// tmp = st.pop();
+	// cs = tmp.getScore();
+	// cout << tmp.getSid() << " "<< tmp.getSname()<< endl;
+	// for(i=0;i<cs.size();i++)
+	// {
+	// 	cout << cs[i] <<endl;
+	// }
 	
-	//cout << st.pop() << endl; 
-	tmp = st.pop();
-	cs = tmp.getScore();
-	cout << tmp.getSid() << " "<< tmp.getSname()<< endl;
-	for(i=0;i<cs.size();i++)
-	{
-		cout << cs[i] <<endl;
-	}
-	
-	//cout << st.pop() << endl; //s1
-	tmp = st.pop();
-	cs = tmp.getScore();
-	cout << tmp.getSid() << " "<< tmp.getSname()<< endl;
-	for(i=0;i<cs.size();i++)
-	{
-		cout << cs[i] <<endl;
-	}
+	// tmp = st.pop();
+	// cs = tmp.getScore();
+	// cout << tmp.getSid() << " "<< tmp.getSname()<< endl;
+	// for(i=0;i<cs.size();i++)
+	// {
+	// 	cout << cs[i] <<endl;
+	// }
 }
