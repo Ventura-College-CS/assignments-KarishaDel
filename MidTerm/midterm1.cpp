@@ -65,7 +65,7 @@ public:
 
 int main() 
 {
-	Students arr[5] = {s1, s2, s3};
+	Students arr[3] = {s1, s2, s3};
 	Students tmp;
 	vector<double> cs;
 	int i;
