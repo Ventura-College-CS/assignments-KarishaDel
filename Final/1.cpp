@@ -7,11 +7,13 @@ class Course
     private:
         int cID;
         string cName;
-        int cCredit;
+        int cCredit[];
 
     public:
+        Course() : cID(0), cName(), cCredit(0) {}
+	    Course(int cID, string cName, int cCredit)
+};
 
-}
 int binarySearch (int array[], int first, int last, int target)
 {
     int mid;

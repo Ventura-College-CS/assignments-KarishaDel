@@ -1,5 +1,5 @@
 #include <iostream>
-#include "genStack.h"
+#include "Postfix.h"
 using namespace std;
 
 int isOperator(char);
@@ -9,7 +9,7 @@ int main()
 {
 	const int N = 20;
 	const int offset = 48;
-	string postfix_exp = "243*+5+";
+	string postfix_exp = "78+";
 	Stack<int, N> stack;
 	char input;
 
