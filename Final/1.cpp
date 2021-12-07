@@ -7,14 +7,14 @@ class Course
     private:
         int cID;
         string cName;
-        int cCredit[];
+        int cCredit[0];
 
     public:
         Course() : cID(0), cName(), cCredit(0) {}
-	    Course(int cID, string cName, int cCredit)
+	    Course(int cID, string cName, int cCredit[])
 };
 
-int binarySearch (int array[], int first, int last, int target)
+int binarySearch (int cCredit[], int first, int last, int target)
 {
     int mid;
         
@@ -23,7 +23,7 @@ int binarySearch (int array[], int first, int last, int target)
     mid = (first + last) /2;
     if (array[mid] == target)
         return mid;
-    else if (array[mid] > target)
+    else if (cCredit[mid] > target)
         return binarySearch(array, first, mid -1, target);
     else    
         return binarySearch(array, mid + 1, last, target);        
@@ -32,7 +32,7 @@ int binarySearch (int array[], int first, int last, int target)
 
 int main()
 {
-    int array[] = { 6, 8, 5, 2, 3, 9 };
+    int cCredit[] = { 100, 200, 300, 400, 500, 600 };
     int target = 5;
  
     int n = sizeof(array)/sizeof(array[0]);
@@ -41,10 +41,10 @@ int main()
     int index = binarySearch(array, first, last, target);
  
     if (index != -1) {
-        printf("Element found at index %d", index);
+        printf("Course found at index %d", index);
     }
     else {
-        printf("Element not found in the array");
+        printf("Course not found in the array");
     }
  
     return 0; 
