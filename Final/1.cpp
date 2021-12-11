@@ -118,3 +118,7 @@ int BinarySearch(Course array[],int first,int last,int target)
     return 0; 
 }
 
+/* The part I struggeld with the most was getting my class into the main function.
+In line 55 I was able to get the class into the main by using the array starter.
+The next part being able to search for the info by using the ID numbers,
+then printing by using the array[]. pointer */ 
