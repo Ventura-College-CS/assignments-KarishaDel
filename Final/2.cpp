@@ -65,7 +65,7 @@ int partition (Course array[], int first, int last)
    
     for (int j = first; j <= last- 1; j++) 
     { 
-        if (array.getSid() <= pivot.getSid()) 
+        if (array[i].getSid() <= pivot.getSid()) 
         { 
             i++;   
             swap(array[i], array[j]); 
@@ -75,7 +75,7 @@ int partition (Course array[], int first, int last)
     return (i + 1); 
 } 
    
-void quickSort(int array[], int first, int last) 
+void quickSort(Course array[], int first, int last) 
 { 
     if (first < last) 
     { 
