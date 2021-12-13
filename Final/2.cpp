@@ -33,24 +33,6 @@ public:
 	
 }; 
 
-// int BinarySearch(Course array[],int first,int last,int target)
-//   {
-//     if (last >= first)
-//     {   
-//         int mid = (first + last) / 2;
-
-//         if (array[mid].getSid() == target)
-//             return mid;
-
-//         if (array[mid].getSid() > target)
-//             return BinarySearch(array,first, mid -1, target);
-        
-//         else if (array[mid].getSid() < target)
-//             return BinarySearch(array, mid + 1,last, target);
-//     }
-//     return -1;
-//   }
-
 // void swap(int* a, int* b) 
 // { 
 //     int t = *a; 
@@ -121,7 +103,7 @@ void quickSort(Course array[], int first, int last)
     array[7].setCid(7);
     array[7].setcName("Speech");
     array[7].setcCredit(5);
-    
+
     array[8].setCid(8);
     array[8].setcName("Physics");
     array[8].setcCredit(4);
@@ -129,6 +111,7 @@ void quickSort(Course array[], int first, int last)
     array[9].setCid(9);
     array[9].setcName("English");
     array[9].setcCredit(3);
+    
  
     int n = sizeof(array)/sizeof(array[0]);
     int i;
@@ -139,6 +122,7 @@ void quickSort(Course array[], int first, int last)
             cout << "Name of Course: "<< array[i].getSname()<< endl;
             cout << "Course ID 100" << array[i].getSid()<< endl;
             cout << "Credit for this cousre: " << array[i].getCredit() << endl; 
+            cout << endl;
         }
     // int first = 0, last = n - 1;
 
