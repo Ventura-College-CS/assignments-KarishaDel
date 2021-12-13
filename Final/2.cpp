@@ -13,7 +13,7 @@ private:
     int cCredit;
 public:
   Course() : cID(0), cName(), cCredit() {}
-	Course(int id, string name,int credit)
+	Course(int id, string name, int credit)
 	{
 		cID = id;
 		cName = name;
@@ -58,7 +58,7 @@ void swap(int* a, int* b)
     *b = t; 
 } 
 
-int partition (array[], int first, int last) 
+int partition (Course array[], int first, int last) 
 { 
     int pivot = array[last];
     int i = (first - 1);   
@@ -132,7 +132,8 @@ void quickSort(int array[], int first, int last)
  
     int n = sizeof(array)/sizeof(array[0]);
     int i;
-    quickSort(array , 0, n-1)
+    quickSort(Course, 0, n-1);
+
     for(int i=0; i< n; i++)
     cout << array[i] << " ";
     // int first = 0, last = n - 1;
