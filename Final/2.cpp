@@ -60,18 +60,18 @@ void swap(int* a, int* b)
 
 int partition (Course array[], int first, int last) 
 { 
-    int pivot = array[last];
+    Course pivot = array[last];
     int i = (first - 1);   
    
     for (int j = first; j <= last- 1; j++) 
     { 
-        if (array[j] <= pivot) 
+        if (array.getSid() <= pivot) 
         { 
             i++;   
-            swap(&array[i], &array[j]); 
+            swap(array[i], array[j]); 
         } 
     } 
-    swap(&array[i + 1], &array[last]); 
+    swap(&array[i + 1], array[last]); 
     return (i + 1); 
 } 
    
