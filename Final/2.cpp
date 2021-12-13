@@ -18,10 +18,6 @@ public:
 		cID = id;
 		cName = name;
         cCredit = credit;
-        // for (int i; i<10; i++)
-        //     {
-        //         cCredit[i] = rand() % 15;
-        //     } 
   }
 	
     int getSid() const { return cID; }
@@ -31,14 +27,7 @@ public:
     void setcName(string name) { cName = name;}
     void setcCredit(int credit) {cCredit = credit;}
 	
-}; 
-
-// void swap(int* a, int* b) 
-// { 
-//     int t = *a; 
-//     *a = *b; 
-//     *b = t; 
-// } 
+};  
 
 int partition (Course array[], int first, int last) 
 { 
@@ -47,7 +36,7 @@ int partition (Course array[], int first, int last)
    
     for (int j = first; j <= last- 1; j++) 
     { 
-        if (array[i].getSid() <= pivot.getSid()) 
+        if (array[i].getSid() <= pivot.getSid()) //using pivot as a holding spot
         { 
             i++;   
             swap(array[i], array[j]); 
@@ -59,7 +48,7 @@ int partition (Course array[], int first, int last)
    
 void quickSort(Course array[], int first, int last) 
 { 
-    if (first < last) 
+    if (first > last) 
     { 
         int pivot = partition(array, first, last); 
    
@@ -104,13 +93,15 @@ void quickSort(Course array[], int first, int last)
     array[7].setcName("Speech");
     array[7].setcCredit(5);
 
+    array[9].setCid(9);
+    array[9].setcName("English");
+    array[9].setcCredit(3);
+
     array[8].setCid(8);
     array[8].setcName("Physics");
     array[8].setcCredit(4);
     
-    array[9].setCid(9);
-    array[9].setcName("English");
-    array[9].setcCredit(3);
+
     
  
     int n = sizeof(array)/sizeof(array[0]);
@@ -128,6 +119,8 @@ void quickSort(Course array[], int first, int last)
 
 }
 
-/* I cannot get the quicksort function to pull from the Couse class */
+/* Right now I am running into the problem that they are comapring to eachother but not
+the entire array to fix this problem I went to line 62 and flipped the sign. This allowed the 
+ID to be in increasing order.*/
 
 
