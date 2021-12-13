@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <array>
 
 using namespace std;
 
@@ -57,7 +58,7 @@ void swap(int* a, int* b)
     *b = t; 
 } 
 
-int Course::partition (int array[], int first, int last) 
+int partition (array[], int first, int last) 
 { 
     int pivot = array[last];
     int i = (first - 1);   
@@ -74,7 +75,7 @@ int Course::partition (int array[], int first, int last)
     return (i + 1); 
 } 
    
-void Course::quickSort(int array[], int first, int last) 
+void quickSort(int array[], int first, int last) 
 { 
     if (first < last) 
     { 
@@ -130,11 +131,14 @@ void Course::quickSort(int array[], int first, int last)
     array[9].setcCredit(3);
  
     int n = sizeof(array)/sizeof(array[0]);
+    int i;
     quickSort(array , 0, n-1)
     for(int i=0; i< n; i++)
     cout << array[i] << " ";
     // int first = 0, last = n - 1;
 
 }
+
+/* I cannot get the quicksort function to pull from the Couse class */
 
 
