@@ -51,12 +51,12 @@ public:
 //     return -1;
 //   }
 
-void swap(int* a, int* b) 
-{ 
-    int t = *a; 
-    *a = *b; 
-    *b = t; 
-} 
+// void swap(int* a, int* b) 
+// { 
+//     int t = *a; 
+//     *a = *b; 
+//     *b = t; 
+// } 
 
 int partition (Course array[], int first, int last) 
 { 
@@ -65,13 +65,13 @@ int partition (Course array[], int first, int last)
    
     for (int j = first; j <= last- 1; j++) 
     { 
-        if (array.getSid() <= pivot) 
+        if (array.getSid() <= pivot.getSid()) 
         { 
             i++;   
             swap(array[i], array[j]); 
         } 
     } 
-    swap(&array[i + 1], array[last]); 
+    swap(array[i + 1], array[last]); 
     return (i + 1); 
 } 
    
@@ -132,10 +132,14 @@ void quickSort(int array[], int first, int last)
  
     int n = sizeof(array)/sizeof(array[0]);
     int i;
-    quickSort(Course, 0, n-1);
+    quickSort(array, 0, n-1);
 
     for(int i=0; i< n; i++)
-    cout << array[i] << " ";
+        {
+            cout << "Name of Course: "<< array[i].getSname()<< endl;
+            cout << "Course ID 100" << array[i].getSid()<< endl;
+            cout << "Credit for this cousre: " << array[i].getCredit() << endl; 
+        }
     // int first = 0, last = n - 1;
 
 }
